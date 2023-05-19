@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Game/Background1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Game/MainGame.gd" type="Script" id=3]
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background1" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 607, 465 )
+
+[node name="FootSpawner" type="Position2D" parent="."]
+position = Vector2( 619, 633 )
+
+[node name="FootTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[connection signal="timeout" from="FootTimer" to="." method="_on_FootTimer_timeout"]

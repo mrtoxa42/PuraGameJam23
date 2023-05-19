@@ -8,5 +8,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		print("Merhaba alper")
 
 
-
+func _ready():
+	pass
 
