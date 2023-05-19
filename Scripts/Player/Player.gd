@@ -6,7 +6,7 @@ var speed = 350
 var activejump = false
 
 
-var foot = preload("res://Scenes/Obstacle/Foot.tscn")
+
 
 func _process(delta):
 	var velocity = Vector2.ZERO

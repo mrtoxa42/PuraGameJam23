@@ -16,6 +16,10 @@ boot_splash/image="res://Logolar/42.5.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://icon.png"
 
+[autoload]
+
+GameManager="*res://Scripts/Game/GameManager.gd"
+
 [debug]
 
 settings/fps/force_fps=60
