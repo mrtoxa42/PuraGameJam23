@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yatay_logo_boyut - Kopya (3).jpg-ab077e147cf1422281d2dc4a964bf9d1.stex"
+path="res://.import/Kare42.png-c7060dd8557e2bf055ee947566f3a46f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Logolar/yatay_logo_boyut - Kopya (3).jpg"
-dest_files=[ "res://.import/yatay_logo_boyut - Kopya (3).jpg-ab077e147cf1422281d2dc4a964bf9d1.stex" ]
+source_file="res://Logolar/Kare42.png"
+dest_files=[ "res://.import/Kare42.png-c7060dd8557e2bf055ee947566f3a46f.stex" ]
 
 [params]
 
