@@ -511,11 +511,17 @@ margin_left = -69.0
 margin_top = -37.0
 margin_right = 1334.0
 margin_bottom = 737.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 630, 311 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = -182.0
@@ -524,6 +530,9 @@ margin_right = 1383.0
 margin_bottom = 811.0
 rect_pivot_offset = Vector2( 147, 106 )
 color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "EntertaimentAnimation"
@@ -539,6 +548,9 @@ texture = ExtResource( 3 )
 offset = Vector2( 0.5, 3 )
 
 [node name="Entertaiment" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="42Label" type="Label" parent="Entertaiment"]
 modulate = Color( 0.890196, 0.0666667, 0.0666667, 0 )
@@ -549,6 +561,9 @@ margin_bottom = 361.0
 rect_pivot_offset = Vector2( -833, 907 )
 custom_fonts/font = SubResource( 11 )
 text = "42"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SLabel" type="Label" parent="Entertaiment"]
 modulate = Color( 1, 1, 1, 0 )
@@ -559,6 +574,9 @@ margin_bottom = 1395.0
 rect_pivot_offset = Vector2( 2006, 311 )
 custom_fonts/font = SubResource( 4 )
 text = "S"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TLabel" type="Label" parent="Entertaiment"]
 modulate = Color( 1, 1, 1, 0 )
@@ -569,6 +587,9 @@ margin_bottom = 402.0
 rect_pivot_offset = Vector2( 610, 865 )
 custom_fonts/font = SubResource( 5 )
 text = "T"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ULabel" type="Label" parent="Entertaiment"]
 modulate = Color( 1, 1, 1, 0 )
@@ -579,6 +600,9 @@ margin_bottom = 402.0
 rect_pivot_offset = Vector2( -376, -163 )
 custom_fonts/font = SubResource( 7 )
 text = "U"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DLabel" type="Label" parent="Entertaiment"]
 modulate = Color( 1, 1, 1, 0 )
@@ -588,6 +612,9 @@ margin_right = 650.0
 margin_bottom = 402.0
 custom_fonts/font = SubResource( 8 )
 text = "D"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="YLabel" type="Label" parent="Entertaiment"]
 modulate = Color( 1, 1, 1, 0 )
@@ -597,6 +624,9 @@ margin_right = 779.0
 margin_bottom = 402.0
 custom_fonts/font = SubResource( 9 )
 text = "Y"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="OLabel" type="Label" parent="Entertaiment"]
 modulate = Color( 1, 1, 1, 0 )
@@ -606,6 +636,9 @@ margin_right = 922.0
 margin_bottom = 402.0
 custom_fonts/font = SubResource( 10 )
 text = "O"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Slogan" type="Label" parent="Entertaiment"]
 visible = false
@@ -616,6 +649,9 @@ margin_right = 1019.0
 margin_bottom = 551.0
 custom_fonts/font = SubResource( 12 )
 text = "KAÇ KADEH KIRILDI SARHOŞ GÖNLÜMDE"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 16 )
