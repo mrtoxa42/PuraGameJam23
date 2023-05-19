@@ -21,14 +21,13 @@ func _process(delta):
 			print(activejump)
 			$JumpTimer.start()
 			Jump()
+	if activejump == true:
+		if Input.is_action_just_released("ui_select"):
+		var tween = get_tree().create_tween()
+		tween.tween_property(self,"scale",Vector2(1,1),1)
+		activejump = false
 	move_and_slide(velocity * speed)
 
-
-func _on_JumpTimer_timeout():
-	var tween = get_tree().create_tween()
-	tween.tween_property(self,"scale",Vector2(1,1),1)
-	activejump = false
-	print(activejump)
 
 
 func Jump():
