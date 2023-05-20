@@ -42,6 +42,7 @@ func _process(delta):
 		if Input.is_action_just_pressed("ui_select"):
 					$GUI/Bounce.show()
 					if footarea == false:
+						$Sisme.play()
 						activejump = true
 						jumptime = false
 						speed = 150
@@ -76,6 +77,7 @@ func _on_PlayerArea_area_entered(area):
 
 		
 func game_over():
+	GameManager.player = null
 	get_tree().change_scene("res://Scenes/Menu/GameOver.tscn")
 	queue_free()
 

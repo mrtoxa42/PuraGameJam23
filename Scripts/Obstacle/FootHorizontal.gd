@@ -7,14 +7,23 @@ var playerarea = false
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var r = rng.randi_range(0,1)
-
+	var r = rng.randi_range(0,4)
 	if r == 0:
+		$Sprite.texture = load("res://Assets/enemy_assets/shoe2.png")
 		$Sprite.flip_v = false
 		$FootShadow.flip_v = false
-	else:
-		$Sprite.flip_h = true
+	if r == 1:
+		$Sprite.texture = load("res://Assets/enemy_assets/shoe1.png")
+		$Sprite.flip_v = true
 		$FootShadow.flip_v = true
+	if r == 2:
+		$Sprite.texture = load("res://Assets/enemy_assets/shoe3.png")
+		$Sprite.flip_v = true
+		$FootShadow.flip_v = true
+	if r == 3:
+		$Sprite.texture = load("res://Assets/enemy_assets/shoe4.png")
+		$Sprite.flip_v = false
+		$FootShadow.flip_v = false
 
 
 func _process(delta):
