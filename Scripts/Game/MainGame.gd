@@ -8,6 +8,9 @@ var hfoot = preload("res://Scenes/Obstacle/FootHorizontal.tscn")
 
 var horfoot = false
 
+func _ready():
+	GameManager.gamein = true
+	GameManager.maingame = self
 
 func _process(delta):
 	if horfoot == true:
@@ -27,3 +30,8 @@ func _on_HorizontalFootTimer_timeout():
 	var HFoot = hfoot.instance()
 	$FootHor.add_child(HFoot)
 	horfoot = true
+
+
+func out_horizontal_foot():
+	$FootHor.position.y = 0
+	horfoot = false

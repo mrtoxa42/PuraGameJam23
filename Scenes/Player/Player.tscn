@@ -99,9 +99,9 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
-hframes = 26
-frame = 25
+texture = ExtResource( 1 )
+hframes = 25
+frame = 10
 
 [node name="PlayerRunAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Run"
@@ -111,7 +111,7 @@ anims/Run = SubResource( 2 )
 [node name="PlayerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2( 0, -2 )
+position = Vector2( -1, -2 )
 shape = SubResource( 3 )
 
 [node name="BackLookTimer" type="Timer" parent="."]
@@ -120,4 +120,5 @@ autostart = true
 
 [connection signal="animation_finished" from="PlayerRunAnimation" to="." method="_on_PlayerRunAnimation_animation_finished"]
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_entered"]
+[connection signal="area_exited" from="PlayerArea" to="." method="_on_PlayerArea_area_exited"]
 [connection signal="timeout" from="BackLookTimer" to="." method="_on_BackLookTimer_timeout"]
