@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Menu/Settings.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "BalonAni"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 699, 1137 ), Vector2( 699, 380 ) ]
+}
 
 [node name="Settings" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,6 +26,16 @@ script = ExtResource( 1 )
 normal = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/BalonAni = SubResource( 1 )
+
+[node name="Icon" type="Sprite" parent="Animation"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 699, 1137 )
+scale = Vector2( 22.9688, 12.9063 )
+texture = ExtResource( 2 )
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
