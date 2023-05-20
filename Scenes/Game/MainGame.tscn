@@ -49,4 +49,12 @@ rotation = 1.5708
 position = Vector2( 630, 6.5 )
 shape = SubResource( 1 )
 
+[node name="FootHor" type="Position2D" parent="."]
+position = Vector2( 1202, 2 )
+
+[node name="HorizontalFootTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="timeout" from="VerticalFootTimer" to="." method="_on_VerticalFootTimer_timeout"]
+[connection signal="timeout" from="HorizontalFootTimer" to="." method="_on_HorizontalFootTimer_timeout"]

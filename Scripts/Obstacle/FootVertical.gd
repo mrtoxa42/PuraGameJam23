@@ -17,14 +17,14 @@ func foot_attack():
 	tween.connect("finished",self,"tween_finished")
 	
 func tween_finished():
-	if scale == Vector2(2,3):
+	if scale == Vector2(2,6):
 		$FootArea/CollisionShape2D.disabled = false
 		var tween = get_tree().create_tween()
 		tween.tween_property(self,"position",Vector2(position.x,900),1.5)
 		tween.connect("finished",self,"tween_finished")
 	else:
 		var tween = get_tree().create_tween()
-		tween.tween_property(self,"scale",Vector2(2,3),1)
+		tween.tween_property(self,"scale",Vector2(2,6),1)
 		tween.connect("finished",self,"tween_finished")
 
 

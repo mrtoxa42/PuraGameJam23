@@ -23,7 +23,7 @@ tracks/0/keys = {
 
 [node name="Foot" type="Node2D"]
 position = Vector2( 612, 888 )
-scale = Vector2( 3, 4 )
+scale = Vector2( 3, 8 )
 script = ExtResource( 2 )
 
 [node name="FootArea" type="Area2D" parent="." groups=["Foot"]]

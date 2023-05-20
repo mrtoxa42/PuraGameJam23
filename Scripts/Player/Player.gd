@@ -47,3 +47,12 @@ func _on_PlayerArea_area_entered(area):
 	if area.is_in_group("Foot"):
 		get_tree().change_scene("res://Scenes/Menu/GameOver.tscn")
 		queue_free()
+
+
+func _on_BackLookTimer_timeout():
+	$PlayerRunAnimation.play("BackLook")
+
+
+func _on_PlayerRunAnimation_animation_finished(anim_name):
+	if anim_name == "BackLook":
+		$PlayerRunAnimation.play("Run")
