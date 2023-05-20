@@ -37,5 +37,15 @@ position = Vector2( 699, 1137 )
 scale = Vector2( 22.9688, 12.9063 )
 texture = ExtResource( 2 )
 
+[node name="sfx" type="TouchScreenButton" parent="."]
+position = Vector2( 256, 112 )
+scale = Vector2( 2.375, 2.125 )
+normal = ExtResource( 2 )
+
+[node name="Music" type="TouchScreenButton" parent="."]
+position = Vector2( 256, 344 )
+scale = Vector2( 2.25, 2.125 )
+normal = ExtResource( 2 )
+
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

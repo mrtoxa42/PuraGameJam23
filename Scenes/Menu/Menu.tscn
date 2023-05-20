@@ -57,36 +57,42 @@ tracks/1/keys = {
 [node name="Menu" type="Node2D"]
 script = ExtResource( 9 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1331.0
+margin_bottom = 925.0
+color = Color( 0.85098, 0, 1, 1 )
+
 [node name="PlayButton" type="TouchScreenButton" parent="."]
-position = Vector2( 441, 117 )
+position = Vector2( 504, 80 )
 scale = Vector2( 3, 3 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 6 )
 shape = SubResource( 3 )
 
 [node name="SettingsButton" type="TouchScreenButton" parent="."]
-position = Vector2( 826, 254 )
+position = Vector2( 896, 256 )
 scale = Vector2( 3, 3 )
 normal = ExtResource( 8 )
 pressed = ExtResource( 7 )
 shape = SubResource( 4 )
 
 [node name="CreditsButton" type="TouchScreenButton" parent="."]
-position = Vector2( 42, 263 )
+position = Vector2( 144, 256 )
 scale = Vector2( 3, 3 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 4 )
 shape = SubResource( 2 )
 
 [node name="AssetsButton" type="TouchScreenButton" parent="."]
-position = Vector2( 461, 433 )
+position = Vector2( 504, 424 )
 scale = Vector2( 3, 3 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="TutorialButton" type="TouchScreenButton" parent="."]
-position = Vector2( 173, 532 )
+position = Vector2( 544, 320 )
+scale = Vector2( 3.5, 1.25 )
 normal = ExtResource( 11 )
 
 [node name="PuraGameJam23Assets" type="Sprite" parent="."]
@@ -109,9 +115,12 @@ texture = ExtResource( 11 )
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+volume_db = 3.0
+bus = "Sfx"
 
 [node name="BlukBluk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
+bus = "Sfx"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

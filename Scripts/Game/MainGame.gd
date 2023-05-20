@@ -44,6 +44,12 @@ func _on_LevelTimer_timeout():
 
 
 func _on_HandTimer_timeout():
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var r = rng.randi_range(0,1)
 	var Hand = hand.instance()
 	get_tree().get_root().add_child(Hand)
-	Hand.global_position = $HandPos.global_position
+	if r == 0:
+		Hand.global_position = $HandPos.global_position
+	if r == 1:
+		Hand.global_position = $HandPos2.global_position

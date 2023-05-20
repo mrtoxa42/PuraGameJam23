@@ -12,6 +12,7 @@ var gamein = false
 
 # Oyun içi değişkenler
 var footattacktime = 5
+var jumpactive = false
 
 
 var Level = 1

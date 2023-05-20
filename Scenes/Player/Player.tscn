@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/player_assets/ana karakter/main_character-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
@@ -6,8 +6,49 @@
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Sounds/Vicik.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Sounds/Sisme.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/player_assets/growing_buble-Sheet.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="Animation" id=9]
+resource_name = "BackBaloon"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 6, 5, 4, 3, 2, 1, 0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "BackLook"
@@ -48,6 +89,46 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Baloon"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -111,13 +192,14 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
-hframes = 26
-frame = 25
+texture = ExtResource( 7 )
+hframes = 9
 
 [node name="PlayerRunAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Run"
+anims/BackBaloon = SubResource( 9 )
 anims/BackLook = SubResource( 4 )
+anims/Baloon = SubResource( 8 )
 anims/Run = SubResource( 2 )
 
 [node name="PlayerArea" type="Area2D" parent="."]

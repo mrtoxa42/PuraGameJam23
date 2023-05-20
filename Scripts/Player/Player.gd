@@ -10,6 +10,7 @@ func _ready():
 	GameManager.player = self
 
 func _process(delta):
+	GameManager.jumpactive = activejump
 	$GUI/Bounce/BounceBar.value = bounce
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
@@ -42,6 +43,7 @@ func _process(delta):
 		if Input.is_action_just_pressed("ui_select"):
 					$GUI/Bounce.show()
 					if footarea == false:
+						$PlayerRunAnimation.play("Baloon")
 						$Sisme.play()
 						activejump = true
 						jumptime = false
@@ -51,6 +53,7 @@ func _process(delta):
 						game_over()
 	if activejump == true:
 		if Input.is_action_just_released("ui_select"): 
+			$PlayerRunAnimation.play("BackBaloon")
 			var tween = get_tree().create_tween()
 			tween.tween_property(self,"scale",Vector2(1,1),1)
 			tween.connect("finished",self,"jump_finished")
@@ -82,11 +85,15 @@ func game_over():
 	queue_free()
 
 func _on_BackLookTimer_timeout():
-	$PlayerRunAnimation.play("BackLook")
+	if activejump == false:
+		$PlayerRunAnimation.play("BackLook")
+		
 
 
 func _on_PlayerRunAnimation_animation_finished(anim_name):
 	if anim_name == "BackLook":
+		$PlayerRunAnimation.play("Run")
+	if anim_name == "BackBaloon":
 		$PlayerRunAnimation.play("Run")
 
 

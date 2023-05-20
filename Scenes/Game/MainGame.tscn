@@ -64,12 +64,16 @@ autostart = true
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+bus = "Music"
 
 [node name="HandPos" type="Position2D" parent="."]
-position = Vector2( 40, 368 )
+position = Vector2( -16, 368 )
+
+[node name="HandPos2" type="Position2D" parent="."]
+position = Vector2( 1288, 368 )
 
 [node name="HandTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="VerticalFootTimer" to="." method="_on_VerticalFootTimer_timeout"]
