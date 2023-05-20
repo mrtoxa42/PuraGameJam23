@@ -13,17 +13,30 @@ func _process(delta):
 	$GUI/Bounce/BounceBar.value = bounce
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
+		if jumptime== true:
+			if $Vicik.playing == false:
+				$Vicik.play()
 		velocity.x = 1
 		rotation_degrees = 45
 	if Input.is_action_pressed("ui_left"):
+		if jumptime== true:
+			if $Vicik.playing == false:
+				$Vicik.play()
 		velocity.x = -1
 		rotation_degrees = -45
 	if Input.is_action_pressed("ui_up"):
+		if jumptime== true:
+			if $Vicik.playing == false:
+				$Vicik.play()
 		velocity.y = -1
 	if Input.is_action_pressed("ui_down"):
+		if jumptime== true:
+			if $Vicik.playing == false:
+				$Vicik.play()
 		velocity.y = 1
 	if velocity.x == 0:
 		rotation_degrees = 0
+	
 		
 	if activejump == false and jumptime == true:
 		if Input.is_action_just_pressed("ui_select"):

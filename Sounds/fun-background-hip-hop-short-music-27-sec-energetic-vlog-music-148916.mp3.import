@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fun-background-hip-hop-short-music-27-sec-energetic-vlog-music-148916.mp3-8d0e64a910774051f09a6184b1a29712.mp3str"
+
+[deps]
+
+source_file="res://Sounds/fun-background-hip-hop-short-music-27-sec-energetic-vlog-music-148916.mp3"
+dest_files=[ "res://.import/fun-background-hip-hop-short-music-27-sec-energetic-vlog-music-148916.mp3-8d0e64a910774051f09a6184b1a29712.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

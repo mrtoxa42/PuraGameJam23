@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/player_assets/ana karakter/main_character-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/player_assets/yukarı bak/kafa_yukari-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sounds/Vicik.mp3" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -156,6 +157,10 @@ text = "BALON PATLAMAK ÜZERE!! "
 [node name="BounceTimer" type="Timer" parent="GUI/Bounce"]
 wait_time = 0.1
 one_shot = true
+
+[node name="Vicik" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -8.0
 
 [connection signal="animation_finished" from="PlayerRunAnimation" to="." method="_on_PlayerRunAnimation_animation_finished"]
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_entered"]

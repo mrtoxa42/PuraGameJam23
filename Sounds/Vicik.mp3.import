@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Vicik.mp3-417533b8c8b873f7d5c88805b221e888.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Vicik.mp3"
+dest_files=[ "res://.import/Vicik.mp3-417533b8c8b873f7d5c88805b221e888.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

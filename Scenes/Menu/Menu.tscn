@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/menu_assets/menu_assets1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/menu_assets/menu_assets2.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Scripts/Menu/Menu.gd" type="Script" id=9]
 [ext_resource path="res://Logolar/PuraGameJam23Assets.webp" type="Texture" id=10]
 [ext_resource path="res://icon.png" type="Texture" id=11]
+[ext_resource path="res://Sounds/ClickGumble.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/BlukBuluk.wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 36.95, 20.8 )
@@ -38,6 +40,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 699, 1137 ), Vector2( 699, 380 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlukBluk:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="Menu" type="Node2D"]
@@ -92,6 +106,12 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 699, 1137 )
 scale = Vector2( 22.9688, 12.9063 )
 texture = ExtResource( 11 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="BlukBluk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
