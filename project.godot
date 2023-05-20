@@ -14,8 +14,8 @@ config/name="Pura Game Jam 23"
 run/main_scene="res://Scenes/Menu/StartScreen.tscn"
 boot_splash/image="res://Logolar/42.5.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://Assets/player_assets/yukarı bak/kafa_yukari20.png"
-config/windows_native_icon="res://Assets/player_assets/yukarı bak/kafa_yukari23.png"
+config/icon="res://Assets/player_assets/growing_buble-Sheet.ico"
+config/windows_native_icon="res://Assets/player_assets/growing_buble-Sheet.ico"
 
 [autoload]
 
@@ -29,6 +29,7 @@ settings/fps/force_fps=60
 
 window/size/width=1280
 window/size/height=720
+window/size/fullscreen=true
 window/stretch/mode="2d"
 
 [gui]

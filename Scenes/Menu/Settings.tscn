@@ -49,3 +49,5 @@ normal = ExtResource( 2 )
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="sfx" to="." method="_on_sfx_pressed"]
+[connection signal="pressed" from="Music" to="." method="_on_Music_pressed"]
