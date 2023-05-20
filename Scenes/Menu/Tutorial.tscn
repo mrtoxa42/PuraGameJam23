@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Menu/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
 font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=2]
@@ -37,20 +46,37 @@ wait_time = 1.5
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 0.54902, 0.227451, 0.870588, 1 )
-margin_left = 244.0
-margin_top = 40.0
-margin_right = 423.0
-margin_bottom = 113.0
+margin_left = 200.0
+margin_top = 15.0
+margin_right = 1057.0
+margin_bottom = 94.0
 custom_fonts/font = SubResource( 1 )
+text = "Karakterimizi hareket ettirmek için ok tuşlarını kullanmanız gerekmektedir.
+Space tusuna basılı tutarak karakterimizi balona donusturebiliriz "
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 487.0
-margin_top = 137.0
-margin_right = 527.0
-margin_bottom = 151.0
+modulate = Color( 0.129412, 0.670588, 0.815686, 1 )
+margin_left = 4.0
+margin_top = 275.0
+margin_right = 822.0
+margin_bottom = 395.0
+custom_fonts/font = SubResource( 3 )
+text = "Karakterimiz balon halindeyken çıkan bara dikkat etmeliyiz. Eger bar 
+dolarsa patlarız ve oyun sona erer. Barın tekrar dolması için ise tekrar 
+yere temas etmemiz gerekmektedir."
+
+[node name="Label3" type="Label" parent="."]
+modulate = Color( 0.258824, 0.917647, 0.690196, 1 )
+margin_left = 358.0
+margin_top = 595.0
+margin_right = 1278.0
+margin_bottom = 674.0
+rect_pivot_offset = Vector2( 1612, 332 )
+custom_fonts/font = SubResource( 4 )
+text = "Ayakkabının üstünden balon olarak geçebiliriz. Eger ayakkabının altındayken 
+balon olmaya çalısırsak patlarız."
 
 [node name="BackButton" type="TouchScreenButton" parent="."]
-position = Vector2( 13, 146 )
 normal = ExtResource( 2 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
