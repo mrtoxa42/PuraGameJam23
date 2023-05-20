@@ -59,7 +59,11 @@ position = Vector2( 1108, 613 )
 scale = Vector2( 0.620642, 0.540365 )
 texture = ExtResource( 10 )
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="AssetsButton" to="." method="_on_AssetsButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

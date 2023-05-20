@@ -6,7 +6,10 @@
 [node name="Credits" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="BackButton" type="TouchScreenButton" parent="."]
 normal = ExtResource( 1 )
 
-[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="BackButton" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

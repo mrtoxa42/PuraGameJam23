@@ -1,21 +1,44 @@
 extends Node2D
 
 
-func _ready():
-	pass # Replace with function body.
+var Go = "Play"
+
 
 
 func _on_PlayButton_pressed():
-	pass#get_tree().change_scene()
-
+	$Timer.start()
+	Go = "Play"
+	$PlayButton.normal = load("res://Assets/menu_assets/menu_play2.png")
 
 func _on_SettingsButton_pressed():
-	get_tree().change_scene("res://Scenes/Menu/Settings.tscn")
+	$Timer.start()
+	Go = "Settings"
+	$SettingsButton.normal = load("res://Assets/menu_assets/menu_settings2.png")
 
 
 func _on_CreditsButton_pressed():
-	get_tree().change_scene("res://Scenes/Menu/Credits.tscn")
+	$Timer.start()
+	Go = "Credits"
+	$CreditsButton.normal = load("res://Assets/menu_assets/menu_credits2.png")
 
 
 func _on_AssetsButton_pressed():
-	get_tree().change_scene("res://Scenes/Menu/Assets.tscn")
+	$Timer.start()
+	Go = "Assets"
+	$AssetsButton.normal = load("res://Assets/menu_assets/menu_assets2.png")
+
+
+
+func _on_Timer_timeout():
+	if Go == "Play":
+		get_tree().change_scene("res://Scenes/Game/MainGame.tscn")
+	if Go == "Settings":
+		get_tree().change_scene("res://Scenes/Menu/Settings.tscn")
+	if Go == "Credits":
+		get_tree().change_scene("res://Scenes/Menu/Credits.tscn")
+	if Go == "Assets":
+		get_tree().change_scene("res://Scenes/Menu/Assets.tscn")
+
+
+
+
