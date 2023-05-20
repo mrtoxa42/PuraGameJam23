@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Game/Background1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Game/MainGame.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 640, 16.5 )
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource( 3 )
@@ -16,5 +19,34 @@ position = Vector2( 607, 465 )
 [node name="VerticalFootTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( 630, 6.5 )
+shape = SubResource( 1 )
+
+[node name="Boundary2" type="StaticBody2D" parent="."]
+position = Vector2( 8, 696 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary2"]
+position = Vector2( 630, 6.5 )
+shape = SubResource( 1 )
+
+[node name="Boundary3" type="StaticBody2D" parent="."]
+position = Vector2( 8, -144 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary3"]
+position = Vector2( 630, 6.5 )
+shape = SubResource( 1 )
+
+[node name="Boundary4" type="StaticBody2D" parent="."]
+position = Vector2( 1272, -144 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary4"]
+position = Vector2( 630, 6.5 )
+shape = SubResource( 1 )
 
 [connection signal="timeout" from="VerticalFootTimer" to="." method="_on_VerticalFootTimer_timeout"]
