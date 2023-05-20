@@ -111,7 +111,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 26
-frame = 17
+frame = 25
 
 [node name="PlayerRunAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Run"
@@ -125,7 +125,7 @@ position = Vector2( -1, -2 )
 shape = SubResource( 3 )
 
 [node name="BackLookTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 autostart = true
 
 [node name="GUI" type="CanvasLayer" parent="."]

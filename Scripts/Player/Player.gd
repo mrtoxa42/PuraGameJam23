@@ -26,14 +26,16 @@ func _process(delta):
 		rotation_degrees = 0
 		
 	if activejump == false:
+		
 		if Input.is_action_just_pressed("ui_select"):
-			$GUI/Bounce.show()
-			if footarea == false:
-				activejump = true
-				speed = 150
-				Jump()
-			else:
-				game_over()
+			if scale == Vector2(1,1):
+				$GUI/Bounce.show()
+				if footarea == false:
+					activejump = true
+					speed = 150
+					Jump()
+				else:
+					game_over()
 	if activejump == true:
 		if Input.is_action_just_released("ui_select"):
 			var tween = get_tree().create_tween()
@@ -41,6 +43,7 @@ func _process(delta):
 			activejump = false
 			speed = 400
 			z_index = 0
+			$GUI/Bounce.hide()
 		if footarea == true:
 			game_over()
 	move_and_slide(velocity * speed)
