@@ -5,6 +5,7 @@ extends Node2D
 
 var vfoot = preload("res://Scenes/Obstacle/FootVertical.tscn")
 var hfoot = preload("res://Scenes/Obstacle/FootHorizontal.tscn")
+var hand = preload("res://Scenes/Obstacle/HolmessHand.tscn")
 
 var horfoot = false
 
