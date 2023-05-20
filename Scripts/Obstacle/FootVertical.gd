@@ -6,14 +6,24 @@ func _ready():
 	foot_attack()
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var r = rng.randi_range(0,1)
+	var r = rng.randi_range(0,4)
 
 	if r == 0:
+		$FootArea/FootSprite.texture = load("res://Assets/enemy_assets/shoe2.png")
 		$FootArea/FootSprite.flip_v = false
 		$FootShadow.flip_v = false
-	else:
+	if r == 1:
+		$FootArea/FootSprite.texture = load("res://Assets/enemy_assets/shoe1.png")
 		$FootArea/FootSprite.flip_v = true
 		$FootShadow.flip_v = true
+	if r == 2:
+		$FootArea/FootSprite.texture = load("res://Assets/enemy_assets/shoe3.png")
+		$FootArea/FootSprite.flip_v = true
+		$FootShadow.flip_v = true
+	if r == 3:
+		$FootArea/FootSprite.texture = load("res://Assets/enemy_assets/shoe4.png")
+		$FootArea/FootSprite.flip_v = false
+		$FootShadow.flip_v = false
 	
 func _process(delta):
 	if GameManager.gamein == false:

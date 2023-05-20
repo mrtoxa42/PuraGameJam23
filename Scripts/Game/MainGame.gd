@@ -41,3 +41,9 @@ func _on_LevelTimer_timeout():
 	GameManager.player.set_level()
 	GameManager.background.move_speed()
 	print(GameManager.Level)
+
+
+func _on_HandTimer_timeout():
+	var Hand = hand.instance()
+	get_tree().get_root().add_child(Hand)
+	Hand.global_position = $HandPos.global_position

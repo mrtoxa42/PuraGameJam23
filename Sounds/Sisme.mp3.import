@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sisme.mp3-6eb5e0c3b35f1413eca4d26c9c3a9d22.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Sisme.mp3"
+dest_files=[ "res://.import/Sisme.mp3-6eb5e0c3b35f1413eca4d26c9c3a9d22.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
