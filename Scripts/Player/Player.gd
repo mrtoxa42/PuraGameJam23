@@ -5,7 +5,7 @@ var speed = 400
 var bounce = 100
 var activejump = false
 var footarea = false
-
+var timejump = true
 func _ready():
 	GameManager.player = self
 
@@ -25,22 +25,22 @@ func _process(delta):
 	if velocity.x == 0:
 		rotation_degrees = 0
 		
-	if activejump == false:
-		
+	if activejump == false and timejump == true:
 		if Input.is_action_just_pressed("ui_select"):
-			if scale == Vector2(1,1):
-				$GUI/Bounce.show()
-				if footarea == false:
-					activejump = true
-					speed = 150
-					Jump()
-				else:
-					game_over()
-	if activejump == true:
-		if Input.is_action_just_released("ui_select"):
+					$GUI/Bounce.show()
+					if footarea == false:
+						activejump = true
+						timejump = false
+						speed = 150
+						Jump()
+					else:
+						game_over()
+	if activejump == true and timejump == false:
+		if Input.is_action_just_released("ui_select"): 
 			var tween = get_tree().create_tween()
 			tween.tween_property(self,"scale",Vector2(1,1),1)
 			activejump = false
+			$BounceEndTimer.start()
 			speed = 400
 			z_index = 0
 			$GUI/Bounce.hide()
@@ -49,13 +49,11 @@ func _process(delta):
 	move_and_slide(velocity * speed)
 
 
-
 func Jump():
 	z_index = 2
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"scale",Vector2(2,2),1)
-	if scale == Vector2(1,1):
-		$GUI/Bounce/BounceTimer.start()
+	$GUI/Bounce/BounceTimer.start()
 
 
 func _on_PlayerArea_area_entered(area):
@@ -78,7 +76,8 @@ func _on_PlayerRunAnimation_animation_finished(anim_name):
 
 
 func _on_PlayerArea_area_exited(area):
-	footarea = false
+	if area.is_in_group("Foot"):
+			footarea = false
 
 func set_level():
 	speed += 0.1
@@ -91,10 +90,14 @@ func _on_BounceTimer_timeout():
 			$GUI/Bounce.show()
 			bounce -=3
 			var i = bounce - 42
-			$GUI/Bounce/BounceLabel.bbcode_text = "[shake rate="+ str(i)+ "level=20]BALON PATLAMAK ÜZERE!![/shake] "
+			$GUI/Bounce/BounceLabel.bbcode_text = "[shake rate="+ str(i)+ "level=20]BALON PATLAMAK ÜZERE!![/shake]"
 			$GUI/Bounce/BounceTimer.start()
 		else:
 			game_over()
 	else:
 		bounce = 100
 		$GUI/Bounce.hide()
+
+
+func _on_BounceEndTimer_timeout():
+	timejump == true

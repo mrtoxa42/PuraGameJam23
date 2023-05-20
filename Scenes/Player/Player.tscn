@@ -157,8 +157,12 @@ text = "BALON PATLAMAK ÜZERE!! "
 wait_time = 0.1
 one_shot = true
 
+[node name="BounceEndTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="animation_finished" from="PlayerRunAnimation" to="." method="_on_PlayerRunAnimation_animation_finished"]
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_entered"]
 [connection signal="area_exited" from="PlayerArea" to="." method="_on_PlayerArea_area_exited"]
 [connection signal="timeout" from="BackLookTimer" to="." method="_on_BackLookTimer_timeout"]
 [connection signal="timeout" from="GUI/Bounce/BounceTimer" to="." method="_on_BounceTimer_timeout"]
+[connection signal="timeout" from="BounceEndTimer" to="." method="_on_BounceEndTimer_timeout"]

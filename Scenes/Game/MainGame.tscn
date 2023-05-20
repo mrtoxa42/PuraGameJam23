@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Game/Background1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Game/MainGame.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Obstacle/HolmessHand.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 640, 16.5 )
@@ -59,6 +60,9 @@ autostart = true
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="HolmessHand" parent="." instance=ExtResource( 4 )]
+position = Vector2( 452, 381 )
 
 [connection signal="timeout" from="VerticalFootTimer" to="." method="_on_VerticalFootTimer_timeout"]
 [connection signal="timeout" from="HorizontalFootTimer" to="." method="_on_HorizontalFootTimer_timeout"]
