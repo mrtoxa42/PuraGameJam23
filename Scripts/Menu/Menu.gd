@@ -28,6 +28,11 @@ func _on_AssetsButton_pressed():
 	$AssetsButton.normal = load("res://Assets/menu_assets/menu_assets2.png")
 
 
+func _on_TutorialButton_pressed():
+	$Timer.start()
+	Go = "Tutorial"
+	
+
 
 func _on_Timer_timeout():
 	if Go == "Play":
@@ -38,6 +43,8 @@ func _on_Timer_timeout():
 		get_tree().change_scene("res://Scenes/Menu/Credits.tscn")
 	if Go == "Assets":
 		get_tree().change_scene("res://Scenes/Menu/Assets.tscn")
+	if Go == "Tutorial":
+		get_tree().change_scene("res://Scenes/Menu/Tutorial.tscn")
 
 
 

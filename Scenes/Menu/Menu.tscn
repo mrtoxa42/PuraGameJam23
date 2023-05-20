@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/menu_assets/menu_assets1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/menu_assets/menu_assets2.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/menu_assets/menu_settings1.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Menu/Menu.gd" type="Script" id=9]
 [ext_resource path="res://Logolar/PuraGameJam23Assets.webp" type="Texture" id=10]
+[ext_resource path="res://icon.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 36.95, 20.8 )
@@ -54,6 +55,10 @@ normal = ExtResource( 1 )
 pressed = ExtResource( 2 )
 shape = SubResource( 1 )
 
+[node name="TutorialButton" type="TouchScreenButton" parent="."]
+position = Vector2( 173, 532 )
+normal = ExtResource( 11 )
+
 [node name="PuraGameJam23Assets" type="Sprite" parent="."]
 position = Vector2( 1108, 613 )
 scale = Vector2( 0.620642, 0.540365 )
@@ -66,4 +71,5 @@ one_shot = true
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="AssetsButton" to="." method="_on_AssetsButton_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_TutorialButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
