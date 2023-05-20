@@ -32,9 +32,10 @@ script = ExtResource( 2 )
 
 [node name="FootShadow" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 0.0980392 )
-position = Vector2( -6.33331, 2.13318 )
+position = Vector2( -16.0036, 4.88926 )
 rotation = 1.5708
-scale = Vector2( 0.123325, 0.279962 )
+scale = Vector2( 0.110416, 0.398616 )
+z_index = 1
 texture = ExtResource( 4 )
 flip_h = true
 
@@ -52,6 +53,7 @@ shape = SubResource( 1 )
 position = Vector2( 1.30953, -0.629962 )
 rotation = 1.5708
 scale = Vector2( 0.144676, 0.436429 )
+z_index = 1
 texture = ExtResource( 4 )
 flip_h = true
 
