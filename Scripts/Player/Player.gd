@@ -38,18 +38,24 @@ func _process(delta):
 			tween.tween_property(self,"scale",Vector2(1,1),1)
 			activejump = false
 			speed = 400
+			z_index = 0
+		if footarea == true:
+			game_over()
 	move_and_slide(velocity * speed)
 
 
 
 func Jump():
+	z_index = 2
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"scale",Vector2(2,2),1)
 
 
 func _on_PlayerArea_area_entered(area):
 	if area.is_in_group("Foot"):
-		footarea = true
+		if activejump == false:
+			footarea = true
+
 		
 func game_over():
 	get_tree().change_scene("res://Scenes/Menu/GameOver.tscn")

@@ -101,7 +101,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 25
-frame = 10
+frame = 5
 
 [node name="PlayerRunAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Run"

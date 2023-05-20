@@ -13,9 +13,8 @@ func _ready():
 	GameManager.maingame = self
 
 func _process(delta):
-	if horfoot == true:
-		$FootHor.position.y += 200 * delta
-		print($FootHor.position.y)
+	$FootHor.position.y += 200 * delta
+
 
 
 
@@ -27,11 +26,8 @@ func _on_VerticalFootTimer_timeout():
 
 
 func _on_HorizontalFootTimer_timeout():
+	$FootHor.position.y = 0
 	var HFoot = hfoot.instance()
 	$FootHor.add_child(HFoot)
-	horfoot = true
+	HFoot.global_position = $FootHor.global_position
 
-
-func out_horizontal_foot():
-	$FootHor.position.y = 0
-	horfoot = false

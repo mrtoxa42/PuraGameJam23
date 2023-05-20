@@ -20,12 +20,14 @@ func foot_attack():
 	
 func tween_finished():
 	if scale == Vector2(2,6):
-		if playerarea == true:
-			GameManager.player.game_over()
-			queue_free()
 		var tween = get_tree().create_tween()
+		$BOOM.visible = true
 		tween.tween_property(self,"position",Vector2(position.x,900),1.5)
 		tween.connect("finished",self,"tween_finished")
+		if playerarea == true:
+			if GameManager.player.activejump == false:
+				GameManager.player.game_over()
+				queue_free()
 	else:
 		var tween = get_tree().create_tween()
 		tween.tween_property(self,"scale",Vector2(2,6),1)
@@ -39,4 +41,5 @@ func _on_FootArea_area_exited(area):
 
 
 func _on_FootArea_area_entered(area):
-	playerarea = true
+	if area.name == "PlayerArea":
+		playerarea = true
