@@ -9,29 +9,34 @@ func _on_PlayButton_pressed():
 	$Timer.start()
 	Go = "Play"
 	$PlayButton.normal = load("res://Assets/menu_assets/menu_play2.png")
+	$Animation.play("BalonAni")
+
 
 func _on_SettingsButton_pressed():
 	$Timer.start()
 	Go = "Settings"
 	$SettingsButton.normal = load("res://Assets/menu_assets/menu_settings2.png")
+	$Animation.play("BalonAni")
 
 
 func _on_CreditsButton_pressed():
 	$Timer.start()
 	Go = "Credits"
 	$CreditsButton.normal = load("res://Assets/menu_assets/menu_credits2.png")
+	$Animation.play("BalonAni")
 
 
 func _on_AssetsButton_pressed():
 	$Timer.start()
 	Go = "Assets"
 	$AssetsButton.normal = load("res://Assets/menu_assets/menu_assets2.png")
+	$Animation.play("BalonAni")
 
 
 func _on_TutorialButton_pressed():
 	$Timer.start()
 	Go = "Tutorial"
-	
+	$Animation.play("BalonAni")
 
 
 func _on_Timer_timeout():
