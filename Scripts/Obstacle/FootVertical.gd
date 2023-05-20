@@ -7,7 +7,6 @@ func _ready():
 	
 func foot_attack():
 	position.y = 900
-	$AttackTimer.wait_time = GameManager.footattacktime
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var r = rng.randi_range(20,1240)
