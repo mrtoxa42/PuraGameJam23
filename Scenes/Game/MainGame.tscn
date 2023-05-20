@@ -17,7 +17,7 @@ visible = false
 position = Vector2( 607, 465 )
 
 [node name="VerticalFootTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 8.0
 autostart = true
 
 [node name="Boundary" type="StaticBody2D" parent="."]
@@ -53,8 +53,13 @@ shape = SubResource( 1 )
 position = Vector2( 1210, 52 )
 
 [node name="HorizontalFootTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 13.0
+autostart = true
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 10.0
 autostart = true
 
 [connection signal="timeout" from="VerticalFootTimer" to="." method="_on_VerticalFootTimer_timeout"]
 [connection signal="timeout" from="HorizontalFootTimer" to="." method="_on_HorizontalFootTimer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

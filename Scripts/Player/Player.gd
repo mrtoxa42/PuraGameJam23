@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 var speed = 400
-
+var bounce = 100
 var activejump = false
 var footarea = false
 
@@ -10,6 +10,7 @@ func _ready():
 	GameManager.player = self
 
 func _process(delta):
+	$GUI/Bounce/BounceBar.value = bounce
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = 1
@@ -26,6 +27,7 @@ func _process(delta):
 		
 	if activejump == false:
 		if Input.is_action_just_pressed("ui_select"):
+			$GUI/Bounce.show()
 			if footarea == false:
 				activejump = true
 				speed = 150
@@ -49,6 +51,8 @@ func Jump():
 	z_index = 2
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"scale",Vector2(2,2),1)
+	if scale == Vector2(1,1):
+		$GUI/Bounce/BounceTimer.start()
 
 
 func _on_PlayerArea_area_entered(area):
@@ -72,3 +76,22 @@ func _on_PlayerRunAnimation_animation_finished(anim_name):
 
 func _on_PlayerArea_area_exited(area):
 	footarea = false
+
+func set_level():
+	speed += 0.1
+	$PlayerRunAnimation.playback_speed += 0.1
+
+
+func _on_BounceTimer_timeout():
+	if activejump == true:
+		if bounce >0:
+			$GUI/Bounce.show()
+			bounce -=3
+			var i = bounce - 42
+			$GUI/Bounce/BounceLabel.bbcode_text = "[shake rate="+ str(i)+ "level=20]BALON PATLAMAK ÜZERE!![/shake] "
+			$GUI/Bounce/BounceTimer.start()
+		else:
+			game_over()
+	else:
+		bounce = 100
+		$GUI/Bounce.hide()

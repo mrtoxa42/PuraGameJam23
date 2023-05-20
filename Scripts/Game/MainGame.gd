@@ -31,3 +31,12 @@ func _on_HorizontalFootTimer_timeout():
 	$FootHor.add_child(HFoot)
 	HFoot.global_position = $FootHor.global_position
 
+
+
+func _on_LevelTimer_timeout():
+	GameManager.Level +=1
+	$HorizontalFootTimer.wait_time -= 0.1
+	$VerticalFootTimer.wait_time -= 0.1
+	GameManager.player.set_level()
+	GameManager.background.move_speed()
+	print(GameManager.Level)
