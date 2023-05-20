@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/player_assets/ana karakter/main_character-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
@@ -35,6 +35,9 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 24 ]
 }
 
+[sub_resource type="CircleShape2D" id=3]
+radius = 18.2483
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -44,9 +47,17 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 25
-frame = 12
+frame = 13
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="PlayerRunAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Run"
 playback_speed = 3.0
 anims/Run = SubResource( 2 )
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+position = Vector2( -1, -2 )
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_entered"]

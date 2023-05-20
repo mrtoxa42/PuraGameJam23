@@ -4,6 +4,7 @@ extends Node2D
 func _ready():
 	GameManager.foot = self
 	foot_attack()
+	$FootArea/CollisionShape2D.disabled = true
 	
 func foot_attack():
 	position.y = 900
@@ -17,11 +18,17 @@ func foot_attack():
 	
 func tween_finished():
 	if scale == Vector2(2,3):
+		$FootArea/CollisionShape2D.disabled = false
 		var tween = get_tree().create_tween()
-		tween.tween_property(self,"position",Vector2(position.x,900),1)
+		tween.tween_property(self,"position",Vector2(position.x,900),1.5)
 		tween.connect("finished",self,"tween_finished")
 	else:
 		var tween = get_tree().create_tween()
 		tween.tween_property(self,"scale",Vector2(2,3),1)
 		tween.connect("finished",self,"tween_finished")
 
+
+
+func _on_FootArea_area_exited(area):
+	if area.name == "PlayerArea":
+		queue_free()

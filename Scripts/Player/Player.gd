@@ -41,3 +41,9 @@ func _process(delta):
 func Jump():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"scale",Vector2(2,2),1)
+
+
+func _on_PlayerArea_area_entered(area):
+	if area.is_in_group("Foot"):
+		get_tree().change_scene("res://Scenes/Menu/GameOver.tscn")
+		queue_free()
