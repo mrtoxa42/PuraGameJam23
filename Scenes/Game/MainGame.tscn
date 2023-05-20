@@ -14,7 +14,7 @@ visible = false
 position = Vector2( 607, 465 )
 
 [node name="VerticalFootTimer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="VerticalFootTimer" to="." method="_on_VerticalFootTimer_timeout"]
