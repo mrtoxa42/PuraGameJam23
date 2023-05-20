@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spray-paint-86162.mp3-a7280644261c95cd3a7b134dfed2dc1a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/spray-paint-86162.mp3"
+dest_files=[ "res://.import/spray-paint-86162.mp3-a7280644261c95cd3a7b134dfed2dc1a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

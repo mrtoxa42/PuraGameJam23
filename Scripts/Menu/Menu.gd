@@ -57,3 +57,9 @@ func _on_Timer_timeout():
 
 
 
+
+
+func _on_PlayerRunAnimation_animation_finished(anim_name):
+	if anim_name == "Run":
+		$PlayerRunAnimation.play("Baloon")
+		print("a")
