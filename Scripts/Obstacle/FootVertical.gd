@@ -4,6 +4,16 @@ var playerarea = false
 func _ready():
 	GameManager.foot = self
 	foot_attack()
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var r = rng.randi_range(0,1)
+
+	if r == 0:
+		$FootArea/FootSprite.flip_v = false
+		$FootShadow.flip_v = false
+	else:
+		$FootArea/FootSprite.flip_v = true
+		$FootShadow.flip_v = true
 	
 func _process(delta):
 	if GameManager.gamein == false:

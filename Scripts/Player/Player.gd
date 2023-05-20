@@ -5,7 +5,7 @@ var speed = 400
 var bounce = 100
 var activejump = false
 var footarea = false
-var timejump = true
+var jumptime = true
 func _ready():
 	GameManager.player = self
 
@@ -25,30 +25,30 @@ func _process(delta):
 	if velocity.x == 0:
 		rotation_degrees = 0
 		
-	if activejump == false and timejump == true:
+	if activejump == false and jumptime == true:
 		if Input.is_action_just_pressed("ui_select"):
 					$GUI/Bounce.show()
 					if footarea == false:
 						activejump = true
-						timejump = false
+						jumptime = false
 						speed = 150
 						Jump()
 					else:
 						game_over()
-	if activejump == true and timejump == false:
+	if activejump == true:
 		if Input.is_action_just_released("ui_select"): 
 			var tween = get_tree().create_tween()
 			tween.tween_property(self,"scale",Vector2(1,1),1)
+			tween.connect("finished",self,"jump_finished")
 			activejump = false
-			$BounceEndTimer.start()
-			speed = 400
-			z_index = 0
+			speed = 400  
 			$GUI/Bounce.hide()
 		if footarea == true:
 			game_over()
 	move_and_slide(velocity * speed)
 
-
+func jump_finished():
+	jumptime = true
 func Jump():
 	z_index = 2
 	var tween = get_tree().create_tween()
@@ -99,5 +99,5 @@ func _on_BounceTimer_timeout():
 		$GUI/Bounce.hide()
 
 
-func _on_BounceEndTimer_timeout():
-	timejump == true
+
+
