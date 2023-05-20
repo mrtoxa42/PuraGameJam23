@@ -7,7 +7,8 @@ var menu
 var sound
 var foot
 
-
+# Oyun genel değişkenleri
+var gamein = false
 
 # Oyun içi değişkenler
 var footattacktime = 5
