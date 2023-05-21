@@ -50,7 +50,7 @@ func _on_TutorialButton_pressed():
 
 func _on_Timer_timeout():
 	if Go == "Play":
-		get_tree().change_scene("res://Scenes/Game/MainGame.tscn")
+		get_tree().change_scene("res://Scenes/Game/Entry.tscn")
 	if Go == "Settings":
 		get_tree().change_scene("res://Scenes/Menu/Settings.tscn")
 	if Go == "Credits":
