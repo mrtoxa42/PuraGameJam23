@@ -12,6 +12,8 @@ var horfoot = false
 func _ready():
 	GameManager.gamein = true
 	GameManager.maingame = self
+	if GameManager.music == true:
+		$Music.play()
 
 func _process(delta):
 	$FootHor.position.y += 200 * delta

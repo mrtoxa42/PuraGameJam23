@@ -3,6 +3,22 @@ extends Node2D
 
 var Go = "Menu"
 
+
+
+func _process(delta):
+	if GameManager.sound == true:
+		$SoundLabel.text = "SFX ON"
+	else:
+		$SoundLabel.text = "SFX OFF"
+	if GameManager.music == true:
+		$MusicLabel.text = "MUSIC ON"
+	else:
+		$MusicLabel.text = "MUSIC OFF"
+
+
+
+
+
 func _on_BackButton_pressed():
 	$Click.play()
 	$Timer.start()
@@ -22,7 +38,7 @@ func _on_sfx_pressed():
 		$SoundLabel.text = "SFX ON"
 	else:
 		GameManager.sound = false
-		$SoundLabel.text = "SFX OF"
+		$SoundLabel.text = "SFX OFF"
 	
 
 
@@ -32,5 +48,5 @@ func _on_Music_pressed():
 		$MusicLabel.text = "MUSIC ON"
 	else:
 		GameManager.music = false
-		$MusicLabel.text = "MUSIC OF"
+		$MusicLabel.text = "MUSIC OFF"
 

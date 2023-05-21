@@ -4,7 +4,8 @@ extends Node
 var player
 var maingame
 var menu
-var sound
+var sound = true
+var music = true
 var foot
 var background
 # Oyun genel değişkenleri

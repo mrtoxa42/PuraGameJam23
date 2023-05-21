@@ -22,19 +22,22 @@ func _process(delta):
 		rotation_degrees = 45
 	if Input.is_action_pressed("ui_left"):
 		if jumptime== true:
-			if $Vicik.playing == false:
-				$Vicik.play()
+			if GameManager.sound == true:
+				if $Vicik.playing == false:
+					$Vicik.play()
 		velocity.x = -1
 		rotation_degrees = -45
 	if Input.is_action_pressed("ui_up"):
 		if jumptime== true:
-			if $Vicik.playing == false:
-				$Vicik.play()
+			if GameManager.sound == true:
+				if $Vicik.playing == false:
+					$Vicik.play()
 		velocity.y = -1
 	if Input.is_action_pressed("ui_down"):
 		if jumptime== true:
-			if $Vicik.playing == false:
-				$Vicik.play()
+			if GameManager.sound == true:
+				if $Vicik.playing == false:
+					$Vicik.play()
 		velocity.y = 1
 	if velocity.x == 0:
 		rotation_degrees = 0
@@ -45,7 +48,8 @@ func _process(delta):
 					$GUI/Bounce.show()
 					if footarea == false:
 						$PlayerRunAnimation.play("Baloon")
-						$Sisme.play()
+						if GameManager.sound == true:
+							$Sisme.play()
 						activejump = true
 						jumptime = false
 						speed = 150

@@ -5,7 +5,8 @@ var Go = "Play"
 
 
 func _on_PlayButton_pressed():
-	$Click.play()
+	if GameManager.sound == true:
+		$Click.play()
 	$Timer.start()
 	Go = "Play"
 	$PlayButton.normal = load("res://Assets/menu_assets/menu_play2.png")
@@ -13,7 +14,8 @@ func _on_PlayButton_pressed():
 
 
 func _on_SettingsButton_pressed():
-	$Click.play()
+	if GameManager.sound == true:
+		$Click.play()
 	$Timer.start()
 	Go = "Settings"
 	$SettingsButton.normal = load("res://Assets/menu_assets/menu_settings2.png")
@@ -21,7 +23,8 @@ func _on_SettingsButton_pressed():
 
 
 func _on_CreditsButton_pressed():
-	$Click.play()
+	if GameManager.sound == true:
+		$Click.play()
 	$Timer.start()
 	Go = "Credits"
 	$CreditsButton.normal = load("res://Assets/menu_assets/menu_credits2.png")
@@ -29,7 +32,8 @@ func _on_CreditsButton_pressed():
 
 
 func _on_AssetsButton_pressed():
-	$Click.play()
+	if GameManager.sound == true:
+		$Click.play()
 	$Timer.start()
 	Go = "Assets"
 	$AssetsButton.normal = load("res://Assets/menu_assets/menu_assets2.png")
@@ -37,7 +41,8 @@ func _on_AssetsButton_pressed():
 
 
 func _on_TutorialButton_pressed():
-	$Click.play()
+	if GameManager.sound == true:
+		$Click.play()
 	$Timer.start()
 	Go = "Tutorial"
 	$Animation.play("BalonAni")
