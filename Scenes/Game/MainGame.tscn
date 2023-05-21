@@ -39,7 +39,7 @@ position = Vector2( 8, -144 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary3"]
-position = Vector2( 630, 6.5 )
+position = Vector2( 646, -103.002 )
 shape = SubResource( 1 )
 
 [node name="Boundary4" type="StaticBody2D" parent="."]
@@ -47,7 +47,7 @@ position = Vector2( 1272, -144 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary4"]
-position = Vector2( 630, 6.5 )
+position = Vector2( 630, 107.998 )
 shape = SubResource( 1 )
 
 [node name="FootHor" type="Position2D" parent="."]

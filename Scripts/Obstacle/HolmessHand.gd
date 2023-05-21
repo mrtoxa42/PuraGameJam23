@@ -42,3 +42,5 @@ func _on_Area2D_area_entered(area):
 func _on_Area2D_area_exited(area):
 	if area.name == "PlayerArea":
 		playerarea = false
+func right():
+	$Sprite.flip_h = true

@@ -57,3 +57,4 @@ func _on_HandTimer_timeout():
 		Hand.global_position = $HandPos.global_position
 	if r == 1:
 		Hand.global_position = $HandPos2.global_position
+		Hand.right()
