@@ -15,7 +15,7 @@ run/main_scene="res://Scenes/Menu/StartScreen.tscn"
 boot_splash/image="res://Logolar/42.5.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://Assets/player_assets/yukarı bak/kafa_yukari20.png"
-config/windows_native_icon="res://Assets/player_assets/yukarı bak/kafa_yukari23.png"
+config/windows_native_icon="res://Assets/player_assets/growing_buble-Sheet.ico"
 <<<<<<<Updatedupstreamboot_splash/image="res://Logolar/42.5.png"
 
 [autoload]
