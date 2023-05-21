@@ -13,6 +13,7 @@ func _process(delta):
 
 
 func _on_MenuButton_pressed():
+	$Click.play()
 	$Timer.start()
 	Go = "Menu"
 	

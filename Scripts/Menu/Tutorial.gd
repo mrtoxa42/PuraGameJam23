@@ -5,6 +5,7 @@ var Go = "Menu"
 
 
 func _on_BackButton_pressed():
+	$Click.play()
 	$Timer.start()
 	Go = "Menu"
 	

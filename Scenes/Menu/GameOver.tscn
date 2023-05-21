@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Menu/GameOver.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/ClickGumble.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/BlukBuluk.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 160
@@ -26,6 +28,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 699, 1137 ), Vector2( 699, 380 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlukBluk:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="GameOver" type="Node2D"]
@@ -64,6 +78,15 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 699, 1137 )
 scale = Vector2( 22.9688, 12.9063 )
 texture = ExtResource( 3 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 3.0
+bus = "Sfx"
+
+[node name="BlukBluk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Sfx"
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

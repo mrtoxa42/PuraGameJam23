@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Menu/Settings.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/ClickGumble.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/BlukBuluk.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BalonAni"
@@ -17,6 +19,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 699, 1137 ), Vector2( 699, 380 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlukBluk:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="Settings" type="Node2D"]
@@ -46,6 +60,15 @@ normal = ExtResource( 2 )
 position = Vector2( 256, 344 )
 scale = Vector2( 2.25, 2.125 )
 normal = ExtResource( 2 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 3.0
+bus = "Sfx"
+
+[node name="BlukBluk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Sfx"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

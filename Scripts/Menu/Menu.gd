@@ -5,6 +5,7 @@ var Go = "Play"
 
 
 func _on_PlayButton_pressed():
+	$Click.play()
 	$Timer.start()
 	Go = "Play"
 	$PlayButton.normal = load("res://Assets/menu_assets/menu_play2.png")
@@ -62,4 +63,4 @@ func _on_Timer_timeout():
 func _on_PlayerRunAnimation_animation_finished(anim_name):
 	if anim_name == "Run":
 		$PlayerRunAnimation.play("Baloon")
-		print("a")
+		$Sisme.play()

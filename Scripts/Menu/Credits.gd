@@ -4,6 +4,7 @@ var Go = "Menu"
 
 
 func _on_TouchScreenButton_pressed():
+	$Click.play()
 	$Timer.start()
 	var Go = "Menu"
 

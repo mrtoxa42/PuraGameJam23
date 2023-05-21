@@ -4,6 +4,7 @@ extends Node2D
 var Go = "Menu"
 
 func _on_BackButton_pressed():
+	$Click.play()
 	$Timer.start()
 	var Go = "Menu"
 	
