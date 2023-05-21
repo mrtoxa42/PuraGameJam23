@@ -21,6 +21,46 @@
 [ext_resource path="res://Sounds/Sisme.wav" type="AudioStream" id=19]
 [ext_resource path="res://Assets/menu_assets/bubbles_menu.png" type="Texture" id=20]
 
+[sub_resource type="Animation" id=12]
+resource_name = "BalonAni"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 641, 1082 ), Vector2( 641, 363 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlukBluk:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.8, 0.219608, 0.462745, 0 ), Color( 0.8, 0.219608, 0.462745, 1 ) ]
+}
+
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 36.95, 20.8 )
 
@@ -214,46 +254,6 @@ tracks/3/keys = {
 [sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 18 )
 
-[sub_resource type="Animation" id=12]
-resource_name = "BalonAni"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Icon:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 641, 1082 ), Vector2( 641, 363 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("BlukBluk:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Animation/Icon/ColorRect:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.8, 0.219608, 0.462745, 0 ), Color( 0.8, 0.219608, 0.462745, 1 ) ]
-}
-
 [node name="Menu" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -264,6 +264,19 @@ color = Color( 0.803922, 0.341176, 0.341176, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/BalonAni = SubResource( 12 )
+
+[node name="ColorRect" type="ColorRect" parent="Animation"]
+show_behind_parent = true
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.8, 0.219608, 0.462745, 0 )
+
+[node name="Icon" type="Sprite" parent="Animation"]
+position = Vector2( 641, 1082 )
+texture = ExtResource( 20 )
 
 [node name="PlayButton" type="TouchScreenButton" parent="."]
 position = Vector2( 504, 184 )
@@ -354,21 +367,6 @@ text = "powered by studyo42"
 
 [node name="Sisme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
-
-[node name="Animation" type="AnimationPlayer" parent="."]
-anims/BalonAni = SubResource( 12 )
-
-[node name="Icon" type="Sprite" parent="Animation"]
-position = Vector2( 641, 1082 )
-texture = ExtResource( 20 )
-
-[node name="ColorRect" type="ColorRect" parent="Animation/Icon"]
-show_behind_parent = true
-margin_left = -641.0
-margin_top = -360.0
-margin_right = 639.0
-margin_bottom = 360.0
-color = Color( 0.8, 0.219608, 0.462745, 0 )
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
