@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/menu_assets/menu_assets1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/menu_assets/menu_assets2.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Fonts/RussoOne-Regular.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://Sounds/Sisme.wav" type="AudioStream" id=19]
 [ext_resource path="res://Assets/menu_assets/bubbles_menu.png" type="Texture" id=20]
+[ext_resource path="res://Assets/menu_assets/infinity_mode1.png" type="Texture" id=21]
 
 [sub_resource type="Animation" id=12]
 resource_name = "BalonAni"
@@ -257,6 +258,9 @@ tracks/3/keys = {
 [sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 18 )
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 64, 22 )
+
 [node name="Menu" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -285,7 +289,7 @@ position = Vector2( 641, 1082 )
 texture = ExtResource( 20 )
 
 [node name="PlayButton" type="TouchScreenButton" parent="."]
-position = Vector2( 480, 184 )
+position = Vector2( 296, 176 )
 scale = Vector2( 3, 3 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 6 )
@@ -375,6 +379,12 @@ text = "powered by studyo42"
 [node name="Sisme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
 
+[node name="Infınıty" type="TouchScreenButton" parent="."]
+position = Vector2( 656, 184 )
+scale = Vector2( 3, 3 )
+normal = ExtResource( 21 )
+shape = SubResource( 14 )
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
@@ -382,3 +392,4 @@ stream = ExtResource( 19 )
 [connection signal="pressed" from="TutorialButton" to="." method="_on_TutorialButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="PlayerRunAnimation" to="." method="_on_PlayerRunAnimation_animation_finished"]
+[connection signal="pressed" from="Infınıty" to="." method="_on_Infnty_pressed"]

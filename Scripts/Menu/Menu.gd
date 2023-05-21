@@ -3,7 +3,8 @@ extends Node2D
 
 var Go = "Play"
 
-
+func _ready():
+	MouseCursor.show()
 func _on_PlayButton_pressed():
 	if GameManager.sound == true:
 		$Click.play()
@@ -59,6 +60,8 @@ func _on_Timer_timeout():
 		get_tree().change_scene("res://Scenes/Menu/Assets.tscn")
 	if Go == "Tutorial":
 		get_tree().change_scene("res://Scenes/Menu/Tutorial.tscn")
+	if Go == "Infınıty":
+		get_tree().change_scene("res://Scenes/Game/Forever.tscn")
 
 
 
@@ -69,3 +72,12 @@ func _on_PlayerRunAnimation_animation_finished(anim_name):
 	if anim_name == "Run":
 		$PlayerRunAnimation.play("Baloon")
 		$Sisme.play()
+
+
+func _on_Infnty_pressed():
+	if GameManager.sound == true:
+		$Click.play()
+	$Timer.start()
+	Go = "Infınıty"
+	$AssetsButton.normal = load("res://Assets/menu_assets/menu_assets2.png")
+	$Animation.play("BalonAni")

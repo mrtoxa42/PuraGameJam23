@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Menu/Settings.gd" type="Script" id=1]
 [ext_resource path="res://Assets/enemy_assets/shoe3.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/menu_assets/bubbles_menu.png" type="Texture" id=6]
 [ext_resource path="res://Assets/environment_assets/leaf.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 140, 80 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "BalonAni"
@@ -69,6 +72,7 @@ position = Vector2( 144, 88 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
