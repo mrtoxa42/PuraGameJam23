@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/player_assets/ana karakter/main_character-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sounds/Vicik.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Sounds/Sisme.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/player_assets/growing_buble-Sheet.png" type="Texture" id=7]
+[ext_resource path="res://Sounds/Scream.wav" type="AudioStream" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -211,6 +212,9 @@ shape = SubResource( 3 )
 [node name="BackLookTimer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
+
+[node name="Scream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
