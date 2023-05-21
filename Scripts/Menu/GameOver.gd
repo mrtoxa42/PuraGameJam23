@@ -4,6 +4,7 @@ var Go = "Menu"
 
 
 func _ready():
+	MouseCursor.show()
 	GameManager.gamein = false
 
 
