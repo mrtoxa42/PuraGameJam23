@@ -63,7 +63,7 @@ func _process(delta):
 			tween.tween_property(self,"scale",Vector2(1,1),1)
 			tween.connect("finished",self,"jump_finished")
 			activejump = false
-			speed = 400  
+			speed = GameManager.playerspeed
 			$GUI/Bounce.hide()
 		if footarea == true:
 			game_over()
@@ -83,6 +83,12 @@ func _on_PlayerArea_area_entered(area):
 	if area.is_in_group("Foot"):
 		if activejump == false:
 			footarea = true
+	if area.is_in_group("Trash"):
+		if jumptime == true:
+			GameManager.playerspeed -=30
+			speed = GameManager.playerspeed
+			$Slowy.show() 
+			print("a")
 
 		
 func game_over():
@@ -93,6 +99,7 @@ func game_over():
 func _on_BackLookTimer_timeout():
 	if activejump == false:
 		$PlayerRunAnimation.play("BackLook")
+		$Scream.play()
 		
 
 
@@ -106,6 +113,8 @@ func _on_PlayerRunAnimation_animation_finished(anim_name):
 func _on_PlayerArea_area_exited(area):
 	if area.is_in_group("Foot"):
 			footarea = false
+	if area.is_in_group("Trash"):
+		$Slowy.hide()
 
 func set_level():
 	speed += 0.1

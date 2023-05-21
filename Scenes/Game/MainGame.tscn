@@ -91,8 +91,33 @@ text = "0"
 [node name="SkorTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="Trash" type="Node2D" parent="."]
+
+[node name="TrashPos" type="Position2D" parent="Trash"]
+position = Vector2( 224, 0 )
+
+[node name="TrashPos2" type="Position2D" parent="Trash"]
+position = Vector2( 424, 0 )
+
+[node name="TrashPos3" type="Position2D" parent="Trash"]
+position = Vector2( 636, 0 )
+
+[node name="TrashPos4" type="Position2D" parent="Trash"]
+position = Vector2( 840, 0 )
+
+[node name="TrashPos5" type="Position2D" parent="Trash"]
+position = Vector2( 1008, 0 )
+
+[node name="TrashPos6" type="Position2D" parent="Trash"]
+position = Vector2( 1008, 0 )
+
+[node name="TrashTimer" type="Timer" parent="Trash"]
+wait_time = 2.0
+autostart = true
+
 [connection signal="timeout" from="VerticalFootTimer" to="." method="_on_VerticalFootTimer_timeout"]
 [connection signal="timeout" from="HorizontalFootTimer" to="." method="_on_HorizontalFootTimer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]
 [connection signal="timeout" from="HandTimer" to="." method="_on_HandTimer_timeout"]
 [connection signal="timeout" from="SkorTimer" to="." method="_on_SkorTimer_timeout"]
+[connection signal="timeout" from="Trash/TrashTimer" to="." method="_on_TrashTimer_timeout"]

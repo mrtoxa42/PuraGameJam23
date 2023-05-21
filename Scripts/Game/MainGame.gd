@@ -7,7 +7,7 @@ var vfoot = preload("res://Scenes/Obstacle/FootVertical.tscn")
 var hfoot = preload("res://Scenes/Obstacle/FootHorizontal.tscn")
 var hand = preload("res://Scenes/Obstacle/HolmessHand.tscn")
 var skor = 999
-
+var trash = preload("res://Scenes/Obstacle/Trash.tscn")
 var horfoot = false
 
 func _ready():
@@ -66,3 +66,30 @@ func _on_HandTimer_timeout():
 
 func _on_SkorTimer_timeout():
 	skor -=1
+
+
+func _on_TrashTimer_timeout():
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var r = rng.randi_range(0,4)
+	if r == 0:
+		var Trash = trash.instance()
+		get_tree().get_root().add_child(Trash)
+		Trash.global_position = $Trash/TrashPos2.global_position
+	if r == 1:
+		var Trash = trash.instance()
+		get_tree().get_root().add_child(Trash)
+		Trash.global_position = $Trash/TrashPos3.global_position
+	if r == 2:
+		var Trash = trash.instance()
+		get_tree().get_root().add_child(Trash)
+		Trash.global_position = $Trash/TrashPos4.global_position
+	if r == 3:
+		var Trash = trash.instance()
+		get_tree().get_root().add_child(Trash)
+		Trash.global_position = $Trash/TrashPos5.global_position
+	if r == 4:
+		var Trash = trash.instance()
+		get_tree().get_root().add_child(Trash)
+		Trash.global_position = $Trash/TrashPos6.global_position
+
