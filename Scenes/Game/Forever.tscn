@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Game/Background1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/Game/MainGame.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Game/Forever.gd" type="Script" id=3]
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Sounds/fun-background-hip-hop-short-music-27-sec-energetic-vlog-music-148916.mp3" type="AudioStream" id=5]
 
@@ -13,7 +13,7 @@ extents = Vector2( 640, 16.5 )
 size = 64
 font_data = ExtResource( 4 )
 
-[node name="MainGame" type="Node2D"]
+[node name="Forever" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Background1" parent="." instance=ExtResource( 2 )]

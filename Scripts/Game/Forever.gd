@@ -6,7 +6,7 @@ extends Node2D
 var vfoot = preload("res://Scenes/Obstacle/FootVertical.tscn")
 var hfoot = preload("res://Scenes/Obstacle/FootHorizontal.tscn")
 var hand = preload("res://Scenes/Obstacle/HolmessHand.tscn")
-var skor = 150
+var skor = 0
 var trash = preload("res://Scenes/Obstacle/Trash.tscn")
 var horfoot = false
 
@@ -20,7 +20,7 @@ func _ready():
 
 func _process(delta):
 	$FootHor.position.y += 200 * delta
-	$Skor.text = str(skor) + "KM"
+	$Skor.text = str(skor) 
 
 
 
@@ -67,10 +67,8 @@ func _on_HandTimer_timeout():
 
 
 func _on_SkorTimer_timeout():
-	if skor > 1:
-		skor -=1
-	else:
-		get_tree().change_scene("res://Scenes/Game/TheEnd.tscn")
+		skor +=1
+
 
 
 func _on_TrashTimer_timeout():

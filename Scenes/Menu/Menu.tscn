@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/menu_assets/menu_settings1.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Menu/Menu.gd" type="Script" id=9]
 [ext_resource path="res://Logolar/PuraGameJam23Assets.webp" type="Texture" id=10]
-[ext_resource path="res://icon.png" type="Texture" id=11]
+[ext_resource path="res://Assets/menu_assets/menu_tutorial1.png" type="Texture" id=11]
 [ext_resource path="res://Sounds/ClickGumble.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sounds/BlukBuluk.wav" type="AudioStream" id=13]
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=14]
@@ -72,6 +72,9 @@ extents = Vector2( 36.95, 20.8 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.95, 20.8 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 35, 20 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 64
@@ -254,10 +257,6 @@ tracks/3/keys = {
 [sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=13]
-size = 32
-font_data = ExtResource( 14 )
-
 [node name="Menu" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -314,10 +313,10 @@ pressed = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="TutorialButton" type="TouchScreenButton" parent="."]
-self_modulate = Color( 1, 1, 1, 0.00392157 )
-position = Vector2( 520, 424 )
-scale = Vector2( 3.5, 1.25 )
+position = Vector2( 480, 352 )
+scale = Vector2( 3, 3 )
 normal = ExtResource( 11 )
+shape = SubResource( 13 )
 
 [node name="PuraGameJam23Assets" type="Sprite" parent="."]
 position = Vector2( 1108, 613 )
@@ -375,15 +374,6 @@ text = "powered by studyo42"
 
 [node name="Sisme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
-
-[node name="Nasil" type="Label" parent="."]
-margin_left = 504.0
-margin_top = 424.0
-margin_right = 728.0
-margin_bottom = 503.0
-custom_fonts/font = SubResource( 13 )
-text = "NASIL OYNARIM
-   (BANA TIKLA)"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
