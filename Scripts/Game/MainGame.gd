@@ -38,8 +38,12 @@ func _on_HorizontalFootTimer_timeout():
 
 func _on_LevelTimer_timeout():
 	GameManager.Level +=1
-	$HorizontalFootTimer.wait_time -= 0.1
-	$VerticalFootTimer.wait_time -= 0.1
+	if $HorizontalFootTimer.wait_time > 3:
+		$HorizontalFootTimer.wait_time -= 0.2
+	if $VerticalFootTimer.wait_time > 4:
+		$VerticalFootTimer.wait_time -= 0.2
+	if $HandTimer.wait_time > 5:
+		$HandTimer.wait_time  -= 0.2
 	GameManager.player.set_level()
 	GameManager.background.move_speed()
 	print(GameManager.Level)

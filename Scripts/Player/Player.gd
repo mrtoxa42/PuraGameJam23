@@ -15,8 +15,9 @@ func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		if jumptime== true:
-			if $Vicik.playing == false:
-				$Vicik.play()
+			if GameManager.sound == true:
+				if $Vicik.playing == false:
+					$Vicik.play()
 		velocity.x = 1
 		rotation_degrees = 45
 	if Input.is_action_pressed("ui_left"):

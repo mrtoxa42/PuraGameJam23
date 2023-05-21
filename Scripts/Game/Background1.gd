@@ -13,4 +13,4 @@ func _process(delta):
 
 
 func move_speed():
-	speed += 20
+	speed += 25

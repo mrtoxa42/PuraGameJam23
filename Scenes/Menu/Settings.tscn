@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Menu/Settings.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BalonAni"
@@ -18,6 +19,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 699, 1137 ), Vector2( 699, 380 ) ]
 }
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 3 )
 
 [node name="Settings" type="Node2D"]
 script = ExtResource( 1 )
@@ -46,6 +51,22 @@ normal = ExtResource( 2 )
 position = Vector2( 256, 344 )
 scale = Vector2( 2.25, 2.125 )
 normal = ExtResource( 2 )
+
+[node name="SoundLabel" type="Label" parent="."]
+margin_left = 576.0
+margin_top = 152.0
+margin_right = 864.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 2 )
+text = "Sfx ON"
+
+[node name="MusicLabel" type="Label" parent="."]
+margin_left = 576.0
+margin_top = 368.0
+margin_right = 864.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 2 )
+text = "MUSIC ON"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -17,14 +17,17 @@ func _on_Timer_timeout():
 func _on_sfx_pressed():
 	if GameManager.sound == false:
 		GameManager.sound = true
+		$SoundLabel.text = "SFX ON"
 	else:
 		GameManager.sound = false
-	
+		$SoundLabel.text = "SFX OF"
 	
 
 
 func _on_Music_pressed():
 	if GameManager.music == false:
 		GameManager.music = true
+		$MusicLabel.text = "MUSIC ON"
 	else:
 		GameManager.music = false
+		$MusicLabel.text = "MUSIC OF"
