@@ -175,7 +175,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 25.0799
+radius = 33.2415
 
 [sub_resource type="DynamicFont" id=5]
 
@@ -195,6 +195,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 7 )
 hframes = 9
+frame = 7
 
 [node name="PlayerRunAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Run"
@@ -206,7 +207,7 @@ anims/Run = SubResource( 2 )
 [node name="PlayerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2( -1, -2 )
+position = Vector2( -2, 2 )
 shape = SubResource( 3 )
 
 [node name="BackLookTimer" type="Timer" parent="."]

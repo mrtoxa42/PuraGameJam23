@@ -11,6 +11,7 @@ var trash = preload("res://Scenes/Obstacle/Trash.tscn")
 var horfoot = false
 
 func _ready():
+	MouseCursor.hide()
 	GameManager.playerspeed = 400
 	GameManager.gamein = true
 	GameManager.maingame = self
