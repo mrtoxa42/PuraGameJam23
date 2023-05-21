@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Obstacle/FootHorizontal.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=3]
@@ -58,9 +58,6 @@ tracks/3/keys = {
 } ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 159, 66 )
-
 [sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 3 )
@@ -89,9 +86,9 @@ anims/Walk = SubResource( 1 )
 
 [node name="FootArea" type="Area2D" parent="." groups=["Foot"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FootArea"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="FootArea"]
 position = Vector2( -9, 10 )
-shape = SubResource( 3 )
+polygon = PoolVector2Array( -148, 44, -168, 16, -165, -26, -104, -68, 4, -71, 138, -53, 172, -19, 174, 16, 144, 46, 61, 52, -13, 51, -45, 65, -90, 66 )
 
 [node name="Node2D" type="Node2D" parent="."]
 z_index = 1

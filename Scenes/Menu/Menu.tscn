@@ -337,17 +337,17 @@ hframes = 9
 frame = 7
 
 [node name="Name" type="RichTextLabel" parent="."]
-modulate = Color( 1, 0, 0.654902, 1 )
+modulate = Color( 0.501961, 0.0117647, 0.333333, 1 )
 anchor_right = 1.0
-margin_left = 440.0
-margin_top = 112.0
-margin_right = 928.0
-margin_bottom = 208.0
+margin_left = 384.0
+margin_top = 88.0
+margin_right = 968.0
+margin_bottom = 232.0
 custom_colors/font_color_shadow = Color( 1, 0, 0.643137, 1 )
 custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
-bbcode_text = "[tornado radius=10.0 freq=1.0]GUMBLE QUEST[/tornado]"
-text = "GUMBLE QUEST"
+bbcode_text = "[tornado radius=10.0 freq=1.0]RUN                   GUBBLE[/tornado]"
+text = "RUN                   GUBBLE"
 
 [node name="PlayerRunAnimation" type="AnimationPlayer" parent="."]
 autoplay = "Run"
