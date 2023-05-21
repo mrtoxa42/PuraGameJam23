@@ -42,12 +42,12 @@ script = ExtResource( 2 )
 
 [node name="FootShadow" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 0.0980392 )
-position = Vector2( -285.165, -118.648 )
+position = Vector2( -0.844299, 70.2318 )
 rotation = 1.5708
 scale = Vector2( 0.110416, 3.15322 )
 z_index = 1
 texture = ExtResource( 3 )
-offset = Vector2( 1761.85, -89.9596 )
+offset = Vector2( 51.2378, 0.209081 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

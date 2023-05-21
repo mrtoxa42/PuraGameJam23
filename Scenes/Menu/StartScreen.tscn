@@ -558,7 +558,7 @@ margin_top = -112.0
 margin_right = 1383.0
 margin_bottom = 811.0
 rect_pivot_offset = Vector2( 147, 106 )
-color = Color( 0, 0, 0, 0.466667 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true
 }

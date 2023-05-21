@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Menu/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Sounds/ClickGumble.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sounds/BlukBuluk.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/menu_assets/bubbles_menu.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -15,6 +16,10 @@ size = 32
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 32
 font_data = ExtResource( 3 )
 
@@ -31,7 +36,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 699, 1137 ), Vector2( 699, 380 ) ]
+"values": [ Vector2( 641, 1082 ), Vector2( 641, 363 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("BlukBluk:playing")
@@ -44,6 +49,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/Icon/ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.8, 0.219608, 0.462745, 0 ), Color( 0.8, 0.219608, 0.462745, 1 ) ]
 }
 
 [node name="Tutorial" type="Node2D"]
@@ -70,37 +87,36 @@ Space tusuna basılı tutarak karakterimizi balona donusturebiliriz "
 
 [node name="Label2" type="Label" parent="."]
 modulate = Color( 0.129412, 0.670588, 0.815686, 1 )
-margin_left = 4.0
-margin_top = 275.0
-margin_right = 822.0
-margin_bottom = 395.0
+margin_left = 1.0
+margin_top = 242.0
+margin_right = 819.0
+margin_bottom = 362.0
 custom_fonts/font = SubResource( 3 )
 text = "Karakterimiz balon halindeyken çıkan bara dikkat etmeliyiz. Eger bar 
 dolarsa patlarız ve oyun sona erer. Barın tekrar dolması için ise tekrar 
-yere temas etmemiz gerekmektedir."
+yere temas etmeniz gerekmektedir."
 
 [node name="Label3" type="Label" parent="."]
 modulate = Color( 0.258824, 0.917647, 0.690196, 1 )
-margin_left = 358.0
-margin_top = 595.0
-margin_right = 1278.0
-margin_bottom = 674.0
+margin_left = 362.0
+margin_top = 483.0
+margin_right = 1282.0
+margin_bottom = 562.0
 rect_pivot_offset = Vector2( 1612, 332 )
 custom_fonts/font = SubResource( 4 )
 text = "Ayakkabının üstünden balon olarak geçebiliriz. Eger ayakkabının altındayken 
 balon olmaya çalısırsak patlarız."
 
+[node name="Label4" type="Label" parent="."]
+modulate = Color( 0.847059, 0.164706, 0.709804, 1 )
+margin_top = 649.0
+margin_right = 700.0
+margin_bottom = 687.0
+custom_fonts/font = SubResource( 6 )
+text = "Yanlardan gelen ellere dikkat et. Niyetleri pek iyi gibi degil."
+
 [node name="BackButton" type="TouchScreenButton" parent="."]
 normal = ExtResource( 2 )
-
-[node name="Animation" type="AnimationPlayer" parent="."]
-anims/BalonAni = SubResource( 5 )
-
-[node name="Icon" type="Sprite" parent="Animation"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 699, 1137 )
-scale = Vector2( 22.9688, 12.9063 )
-texture = ExtResource( 2 )
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -110,6 +126,21 @@ bus = "Sfx"
 [node name="BlukBluk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 bus = "Sfx"
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/BalonAni = SubResource( 5 )
+
+[node name="Icon" type="Sprite" parent="Animation"]
+position = Vector2( 641, 1082 )
+texture = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="Animation/Icon"]
+show_behind_parent = true
+margin_left = -641.0
+margin_top = -360.0
+margin_right = 639.0
+margin_bottom = 360.0
+color = Color( 0.8, 0.219608, 0.462745, 0 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
