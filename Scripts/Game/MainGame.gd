@@ -6,7 +6,7 @@ extends Node2D
 var vfoot = preload("res://Scenes/Obstacle/FootVertical.tscn")
 var hfoot = preload("res://Scenes/Obstacle/FootHorizontal.tscn")
 var hand = preload("res://Scenes/Obstacle/HolmessHand.tscn")
-var skor = 999
+var skor = 200
 var trash = preload("res://Scenes/Obstacle/Trash.tscn")
 var horfoot = false
 
@@ -67,7 +67,10 @@ func _on_HandTimer_timeout():
 
 
 func _on_SkorTimer_timeout():
-	skor -=1
+	if skor > 1:
+		skor -=1
+	else:
+		get_tree().change_scene("res://Scenes/Game/TheEnd.tscn")
 
 
 func _on_TrashTimer_timeout():
