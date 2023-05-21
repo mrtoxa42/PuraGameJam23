@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Menu/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://Assets/environment_assets/leaf.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/environment_assets/starbucks.png" type="Texture" id=10]
 [ext_resource path="res://Assets/environment_assets/kola.png" type="Texture" id=11]
 [ext_resource path="res://Assets/enemy_assets/shoe3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/player_assets/ana karakter/main_character7.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=7]
 resource_name = "BalonAni"
@@ -186,9 +187,14 @@ position = Vector2( -200, 860 )
 texture = ExtResource( 12 )
 
 [node name="Hand" type="Sprite" parent="Kola/Leaf/Starbucks/Waterbottle/Shoe3"]
-position = Vector2( 2202.5, -520 )
+position = Vector2( 1720, 440 )
 rotation = 3.14159
 texture = ExtResource( 8 )
+
+[node name="MainCharacter7" type="Sprite" parent="Kola/Leaf/Starbucks/Waterbottle/Shoe3/Hand"]
+position = Vector2( -280, 960 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
 
 [node name="Shoe4" type="Sprite" parent="Kola/Leaf/Starbucks/Waterbottle/Shoe3"]
 position = Vector2( 19.9999, 220 )
