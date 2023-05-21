@@ -36,17 +36,20 @@ func _on_sfx_pressed():
 	if GameManager.sound == false:
 		GameManager.sound = true
 		$SoundLabel.text = "SFX ON"
+		$sfx.normal = load("res://Assets/enemy_assets/shoe3.png")
+		
 	else:
 		GameManager.sound = false
 		$SoundLabel.text = "SFX OFF"
-	
+		$sfx.normal = load("res://Assets/enemy_assets/shoe2.png")
 
 
 func _on_Music_pressed():
 	if GameManager.music == false:
 		GameManager.music = true
 		$MusicLabel.text = "MUSIC ON"
+		$Music/Sprite.texture = load("res://Assets/enemy_assets/shoe3.png")
 	else:
 		GameManager.music = false
 		$MusicLabel.text = "MUSIC OFF"
-
+		$Music/Sprite.texture = load("res://Assets/enemy_assets/shoe2.png")

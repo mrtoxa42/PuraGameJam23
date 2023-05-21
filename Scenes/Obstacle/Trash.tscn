@@ -8,7 +8,6 @@
 extents = Vector2( 32, 8 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 12
 font_data = ExtResource( 3 )
 
 [node name="Trash" type="Area2D" groups=["Trash"]]
@@ -21,14 +20,21 @@ shape = SubResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Slowy" type="Label" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 visible = false
-margin_left = -30.0
-margin_top = 8.0
-margin_right = 25.0
+z_index = 1
+
+[node name="Slowy" type="Label" parent="Node2D"]
+margin_left = 10.0
+margin_top = 4.0
+margin_right = 87.0
 margin_bottom = 23.0
-rect_rotation = -15.0
 custom_fonts/font = SubResource( 2 )
-text = "SLOOWLY!"
+text = "SLOOWLY!!"
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_Trash_area_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Menu/Settings.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/enemy_assets/shoe3.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/ClickGumble.wav" type="AudioStream" id=3]
 [ext_resource path="res://Sounds/BlukBuluk.wav" type="AudioStream" id=4]
 [ext_resource path="res://Fonts/BubblegumSans-Regular.ttf" type="DynamicFontData" id=5]
@@ -59,6 +59,11 @@ font_data = ExtResource( 5 )
 [node name="Settings" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 736.0
+color = Color( 0.0745098, 0.0156863, 0.196078, 1 )
+
 [node name="BackButton" type="TouchScreenButton" parent="."]
 position = Vector2( 144, 88 )
 rotation = 3.14159
@@ -85,14 +90,18 @@ position = Vector2( 641, 1082 )
 texture = ExtResource( 6 )
 
 [node name="sfx" type="TouchScreenButton" parent="."]
-position = Vector2( 298, 119 )
-scale = Vector2( 2.375, 2.125 )
+position = Vector2( 152, 120 )
 normal = ExtResource( 2 )
 
 [node name="Music" type="TouchScreenButton" parent="."]
-position = Vector2( 294, 408 )
-scale = Vector2( 2.25, 2.125 )
+self_modulate = Color( 1, 1, 1, 0.00392157 )
+position = Vector2( 144, 376 )
 normal = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Music"]
+position = Vector2( 216, 80 )
+texture = ExtResource( 2 )
+flip_v = true
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

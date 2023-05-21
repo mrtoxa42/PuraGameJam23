@@ -82,6 +82,7 @@ anims/Slap = SubResource( 3 )
 z_index = 1
 
 [node name="Slaaap!" type="Label" parent="Node2D"]
+visible = false
 light_mask = 3
 margin_left = -42.0
 margin_top = 71.0

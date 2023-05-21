@@ -13,4 +13,8 @@ func _process(delta):
 
 
 func move_speed():
-	speed += 25
+	speed += 30
+
+func move_slow():
+	if speed > 50:
+		speed -= 30

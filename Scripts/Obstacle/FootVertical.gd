@@ -41,7 +41,7 @@ func foot_attack():
 func tween_finished():
 	if scale == Vector2(2,6):
 		var tween = get_tree().create_tween()
-		$BOOM.visible = true
+		$Node2D/BOOM.visible = true
 		tween.tween_property(self,"position",Vector2(position.x,900),1.5)
 		tween.connect("finished",self,"tween_finished")
 		if playerarea == true:

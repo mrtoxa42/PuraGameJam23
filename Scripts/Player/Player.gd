@@ -87,8 +87,7 @@ func _on_PlayerArea_area_entered(area):
 		if jumptime == true:
 			GameManager.playerspeed -=30
 			speed = GameManager.playerspeed
-			$Slowy.show() 
-			print("a")
+
 
 		
 func game_over():
@@ -114,10 +113,10 @@ func _on_PlayerArea_area_exited(area):
 	if area.is_in_group("Foot"):
 			footarea = false
 	if area.is_in_group("Trash"):
-		$Slowy.hide()
+		pass
 
 func set_level():
-	speed += 0.1
+	speed += 0.2
 	$PlayerRunAnimation.playback_speed += 0.1
 
 

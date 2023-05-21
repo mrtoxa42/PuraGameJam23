@@ -22,11 +22,18 @@ func _ready():
 
 
 func _process(delta):
-	
+	if GameManager.gamein == false:
+		queue_free()
 	position.y += speed * delta
 
 
 func _on_Trash_area_entered(area):
 	if area.name == "PlayerArea":
 		if GameManager.player.jumptime == true:
-			queue_free()
+			$Node2D.show()
+			GameManager.background.move_slow()
+			$DeathTimer.start()
+
+
+func _on_DeathTimer_timeout():
+	queue_free()

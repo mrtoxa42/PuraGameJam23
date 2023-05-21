@@ -26,6 +26,7 @@ func _on_AttackTimer_timeout():
 
 func tween_finished():
 	$AnimationPlayer.play("Slap")
+	$"Node2D/Slaaap!".show()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

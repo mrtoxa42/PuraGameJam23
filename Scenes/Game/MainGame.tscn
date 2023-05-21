@@ -112,7 +112,7 @@ position = Vector2( 1008, 0 )
 position = Vector2( 1008, 0 )
 
 [node name="TrashTimer" type="Timer" parent="Trash"]
-wait_time = 2.0
+wait_time = 4.0
 autostart = true
 
 [connection signal="timeout" from="VerticalFootTimer" to="." method="_on_VerticalFootTimer_timeout"]

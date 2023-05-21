@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/player_assets/ana karakter/main_character-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
@@ -186,10 +186,6 @@ bg_color = Color( 1, 0.0117647, 0.717647, 1 )
 size = 32
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=10]
-size = 22
-font_data = ExtResource( 4 )
-
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -257,15 +253,6 @@ volume_db = -8.0
 
 [node name="Sisme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-
-[node name="Slowy" type="Label" parent="."]
-show_behind_parent = true
-margin_left = -86.0
-margin_top = -26.0
-margin_right = 15.0
-rect_rotation = -15.0
-custom_fonts/font = SubResource( 10 )
-text = "SLOOWLY!"
 
 [connection signal="animation_finished" from="PlayerRunAnimation" to="." method="_on_PlayerRunAnimation_animation_finished"]
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_entered"]
