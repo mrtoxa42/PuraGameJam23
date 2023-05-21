@@ -20,7 +20,7 @@ func _on_Website_pressed():
 
 
 func _on_Instagram_pressed():
-	OS.shell_open("https://www.instagram.com/studyo42/%22")
+	OS.shell_open("https://www.instagram.com/studyo42/")
 
 
 func _on_Discord_pressed():

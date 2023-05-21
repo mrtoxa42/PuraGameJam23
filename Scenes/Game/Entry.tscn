@@ -38,6 +38,9 @@ anims/Entry = SubResource( 1 )
 [node name="Sahne1" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="."]
 margin_right = 274.0
