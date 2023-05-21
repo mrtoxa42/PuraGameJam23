@@ -11,6 +11,7 @@ func _process(delta):
 		queue_free()
 	if follow == true and GameManager.player != null:
 		var i = GameManager.player.global_position.y - global_position.y
+		velocity = Vector2(i,velocity.y).normalized()
 		velocity.y = i -20
 	
 		move_and_slide(velocity * speed * delta)

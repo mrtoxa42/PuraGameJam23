@@ -71,6 +71,7 @@ func _process(delta):
 
 func jump_finished():
 	jumptime = true
+	z_index = 0
 func Jump():
 	z_index = 2
 	var tween = get_tree().create_tween()

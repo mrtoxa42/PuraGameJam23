@@ -23,7 +23,7 @@ func _ready():
 	if r == 3:
 		$FootArea/FootSprite.texture = load("res://Assets/enemy_assets/shoe4.png")
 		$FootArea/FootSprite.flip_v = false
-		$FootShadow.flip_v = false
+		$FootShadow.flip_v = true
 	
 func _process(delta):
 	if GameManager.gamein == false:
