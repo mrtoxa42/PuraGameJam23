@@ -13,7 +13,9 @@ func _process(delta):
 
 
 func _on_MenuButton_pressed():
-	$Click.play()
+	if GameManager.sound == true:
+		$Click.play()
+	$Node2D/MenuButton.normal = load("res://Assets/menu_assets/menu_menu2.png")
 	$Timer.start()
 	Go = "Menu"
 	
